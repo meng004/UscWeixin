@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UscWebservices.Weixin.JiaoWu", "UscWebservices.Weixin.JiaoWu\UscWebservices.Weixin.JiaoWu.csproj", "{828EE7E3-F5F4-4D79-AE58-7C5C7755C977}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UscWebservices.Weixin.JingPinKeCheng", "UscWebservices.Weixin.JingPinKeCheng\UscWebservices.Weixin.JingPinKeCheng.csproj", "{C8D3D58D-CBAA-41BB-BAD5-3548A27D9DD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UscWebservices.Weixin.WebForms", "UscWebservices.Weixin.WebForms\UscWebservices.Weixin.WebForms.csproj", "{C3CDE763-1E33-435F-A69E-E650EECD1E7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UscWebservices.Weixin.CommonServices", "UscWebservices.Weixin.CommonServices\UscWebservices.Weixin.CommonServices.csproj", "{54168161-EBCF-46D4-A4FF-2ED2CD9FFF4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UscWebservices.Weixin.CommonServices.Test", "UscWebservices.Weixin.CommonServices.Test\UscWebservices.Weixin.CommonServices.Test.csproj", "{AAC2E2F1-1895-4183-A3A6-57E16945D235}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{828EE7E3-F5F4-4D79-AE58-7C5C7755C977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828EE7E3-F5F4-4D79-AE58-7C5C7755C977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828EE7E3-F5F4-4D79-AE58-7C5C7755C977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828EE7E3-F5F4-4D79-AE58-7C5C7755C977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D3D58D-CBAA-41BB-BAD5-3548A27D9DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D3D58D-CBAA-41BB-BAD5-3548A27D9DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D3D58D-CBAA-41BB-BAD5-3548A27D9DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D3D58D-CBAA-41BB-BAD5-3548A27D9DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3CDE763-1E33-435F-A69E-E650EECD1E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3CDE763-1E33-435F-A69E-E650EECD1E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3CDE763-1E33-435F-A69E-E650EECD1E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3CDE763-1E33-435F-A69E-E650EECD1E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54168161-EBCF-46D4-A4FF-2ED2CD9FFF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54168161-EBCF-46D4-A4FF-2ED2CD9FFF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54168161-EBCF-46D4-A4FF-2ED2CD9FFF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54168161-EBCF-46D4-A4FF-2ED2CD9FFF4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC2E2F1-1895-4183-A3A6-57E16945D235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC2E2F1-1895-4183-A3A6-57E16945D235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC2E2F1-1895-4183-A3A6-57E16945D235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC2E2F1-1895-4183-A3A6-57E16945D235}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

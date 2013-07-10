@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xml>
+  <ToUserName><![CDATA[olPjZjsXuQPJoV0HlruZkNzKc91E]]></ToUserName>
+  <FromUserName><![CDATA[gh_a96a4a619366]]></FromUserName>
+  <CreateTime>1371526571</CreateTime>
+  <MsgType>text</MsgType>
+  <Content><![CDATA[只提供学生帐号密码找回
+请检查帐号
+欢迎下次使用]]></Content>
+  <FuncFlag>0</FuncFlag>
+</xml>

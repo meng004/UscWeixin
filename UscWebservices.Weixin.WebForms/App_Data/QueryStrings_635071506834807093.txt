@@ -1,0 +1,4 @@
+Signature = a6a62a99a70b4ef26341b848395aca425b40f516
+Timestamp = 1357986928
+Nonce = 1357986928
+Echostr = 1357986928
