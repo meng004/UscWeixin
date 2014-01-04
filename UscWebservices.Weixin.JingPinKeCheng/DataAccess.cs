@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace UscWebservices.Weixin.JingPinKeCheng
 {
-    public class DataAccess
+    public class DataAccess 
     {
         /// <summary>
         /// 由登录用户名，取密码
@@ -17,21 +18,18 @@ namespace UscWebservices.Weixin.JingPinKeCheng
             {
                 //只接受学生帐号
                 var user = context.user.First(t =>
-                    t.logname == username
+                    t.logname == username && t.user_type == 2
                     );
                 //处理帐号错误
                 if (user == null)
                 {
                     return string.Empty;
                 }
-                else if (user.user_type == 2)
+                else
                 {
                     return user.password_src;
                 }
-                else
-                {
-                    return string.Empty;
-                }
+
             }
         }
     }

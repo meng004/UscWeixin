@@ -1,8 +1,9 @@
 ﻿using System.Linq;
 
+
 namespace UscWebservices.Weixin.JiaoWu
 {
-    public class DataAccess
+    public class DataAccess 
     {
         /// <summary>
         /// 由登录用户名，取密码
@@ -15,7 +16,7 @@ namespace UscWebservices.Weixin.JiaoWu
             {
                 //只处理学生帐号
                 var user = context.V_SYS_UsersInfo.First(t =>
-                    t.UserName == username
+                    t.UserName == username && t.YHLXM == "00"
                     );
 
                 //处理帐号错误
@@ -23,13 +24,9 @@ namespace UscWebservices.Weixin.JiaoWu
                 {
                     return string.Empty;
                 }
-                else if (user.YHLXM == "00")
+                else 
                 {
                     return user.Password;
-                }
-                else
-                {
-                    return string.Empty;
                 }
             }
         }

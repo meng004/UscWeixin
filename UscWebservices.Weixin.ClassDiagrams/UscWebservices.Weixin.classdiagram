@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b28e648-e523-4015-959c-7d0e1bfab067" name="UscWebservices.Weixin" linkedPackageId="8a7671b3-d685-4389-97be-bd5c6714759c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="0e7fd9fa-216e-4ebf-addd-184c0a2e9568">
+      <elementDefinition Id="88ff1e91-dcc5-4590-9096-d2404ff7a9a5" />
+      <body>目前给出教务系统与精品课程的密码找回实现。
+集成操作步骤：
+1  实现接口；
+2  在服务中添加Action</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="86eeca5c-28f7-4972-ba57-1be33dcad910" name="IFindPwd" isAbstract="false" isLeaf="false">
+        <description>找回密码接口</description>
+        <elementDefinition Id="44631da4-0a45-4efe-86bf-13348cdace75" />
+        <ownedOperations>
+          <operation Id="a7377ae6-5956-4413-9104-17e391d68c72" name="GetPasswordByUsername" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <description>按用户名找回密码</description>
+            <elementDefinition Id="7d47cb4c-fc7a-4763-8a8f-0db807726f2c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e5ed6119-929f-444d-9523-a1a154410361" name="username" direction="In">
+                  <elementDefinition Id="cf3e3232-31ae-43c5-a9e7-04f99c199137" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c45c5d9a-ac6a-4311-8873-37729a14bfae" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5c2a1c8d-90c7-4e8b-bd18-b85b00695ba4" direction="Return">
+                  <elementDefinition Id="291bb8fc-5e88-4a22-9d2d-923fe5a37c2c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f05be082-3a93-4b31-8843-a672f963bf26" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="c45c5d9a-ac6a-4311-8873-37729a14bfae" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f05be082-3a93-4b31-8843-a672f963bf26" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3a33e3a0-0194-441f-99f1-d34ffacfe978" name="JiaoWuFindPwd" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>找回教务系统密码</description>
+        <elementDefinition Id="5e26004b-86ed-4010-8e85-072740d3983e" />
+        <suppliersInternal>
+          <interfaceRealization Id="2b67541b-651e-4c05-8cc4-ec29469deca0">
+            <interfaceMoniker Id="86eeca5c-28f7-4972-ba57-1be33dcad910" LastKnownName="IFindPwd" />
+            <elementDefinition Id="5dae0316-d829-49a8-885b-008e947d4419" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="f0ade514-db0b-4a5b-824d-7526e8f35d07" name="GetPasswordByUsername" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce9f2d68-00e4-45ae-ae3e-6f3ee65e7ba2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ebf418c5-f30d-42bc-8e0a-12f5d211e661" name="username" direction="In">
+                  <elementDefinition Id="3fd34b0e-04df-438f-93c2-ea8906215045" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c45c5d9a-ac6a-4311-8873-37729a14bfae" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2a42dd74-871f-4d83-b16e-0c7540fc8c23" direction="Return">
+                  <elementDefinition Id="8444435a-7238-45ce-8b4a-1f6d0b98fb96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c45c5d9a-ac6a-4311-8873-37729a14bfae" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="231aa217-beec-4b81-9357-9164bed08afb" name="JingPinKeChengFindPwd" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>找回精品课程密码</description>
+        <elementDefinition Id="4fb0a011-8228-4bf9-a6e5-53c564040c63" />
+        <suppliersInternal>
+          <interfaceRealization Id="f7cf941c-546f-4b02-aba7-2f1384b56caf">
+            <interfaceMoniker Id="86eeca5c-28f7-4972-ba57-1be33dcad910" LastKnownName="IFindPwd" />
+            <elementDefinition Id="0d29d470-b925-4433-b15d-494e6c0cbf5b" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="c1cc1940-1b87-4b61-aedd-749cee9a3ab7" name="GetPasswordByUsername" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f01f6476-ef01-420c-896d-b46b35d8996b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="16c6d385-933a-40be-be00-eb4f8be861ec" name="username" direction="In">
+                  <elementDefinition Id="21e422b9-3f09-4506-a643-76f71df812c5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c45c5d9a-ac6a-4311-8873-37729a14bfae" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fb482ab1-1d24-49d2-9f72-d67860c04208" direction="Return">
+                  <elementDefinition Id="f65509ee-0328-4c26-a1a7-d4ac687012e8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c45c5d9a-ac6a-4311-8873-37729a14bfae" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9ce6c7da-89ab-49b4-a097-5d5ac16ba5eb" name="JiaoWuPwdService" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>教务系统找回密码服务</description>
+        <elementDefinition Id="fcff0dbe-4865-44ad-9f3f-c4dcff9ca2b8" />
+        <suppliersInternal>
+          <dependency Id="d7212f6c-e734-415d-a8a8-5c4125843dbf">
+            <classMoniker Id="3a33e3a0-0194-441f-99f1-d34ffacfe978" LastKnownName="JiaoWuFindPwd" />
+            <elementDefinition Id="07ea1af4-0dc2-4f99-8324-3a53e642cc9d" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="0f411c28-d400-4c22-a039-4f7e0b10bbdd" name="Get" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cb5f78f5-218e-4fa7-b16f-b496210fdbde" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5320bd85-a461-4d2d-81eb-60658a8ca84d" name="username" direction="In">
+                  <elementDefinition Id="93b92f25-9f90-4522-8486-cd8e1109af38" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c45c5d9a-ac6a-4311-8873-37729a14bfae" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bb116c32-9ff2-43f9-a25b-8345a2cb6026" direction="Return">
+                  <elementDefinition Id="b4016f0f-6b30-44b8-8045-8779463f5511" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2863c7af-f679-4f43-99a2-f68b17c27f9d" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2863c7af-f679-4f43-99a2-f68b17c27f9d" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e0a137c0-ecb5-41d6-9d50-8386263ec3c8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3afa53f6-d2b4-4f42-9ee1-6d2c674c52e1" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6e8215cc-b19b-43e6-84af-1b541ab2631e" name="JingPinKeChengPwdService" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>精品课程找回密码服务</description>
+        <elementDefinition Id="b0f45a6a-225b-40b2-8e1c-40576dc8608b" />
+        <suppliersInternal>
+          <dependency Id="9a14d432-a2e7-4628-9d20-2b24fd68af8b">
+            <classMoniker Id="231aa217-beec-4b81-9357-9164bed08afb" LastKnownName="JingPinKeChengFindPwd" />
+            <elementDefinition Id="8bd4557f-ad5d-493b-ad21-c59ffaf75cab" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="22030dcd-e8ec-49dc-ba92-4f876fa06c34" name="Get" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="db06b11b-1729-4563-94be-d96280c545eb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="85a221a7-dd9c-4a84-8c8f-b3dbc628e4a3" name="username" direction="In">
+                  <elementDefinition Id="25475dda-6817-4851-b93e-9c2af31eec39" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e0a137c0-ecb5-41d6-9d50-8386263ec3c8" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ddbbc23f-adb4-46f3-97dd-2048f2f408dd" direction="Return">
+                  <elementDefinition Id="4eb9e014-ae9f-494c-9b0c-305748868b55" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3afa53f6-d2b4-4f42-9ee1-6d2c674c52e1" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="8a7671b3-d685-4389-97be-bd5c6714759c" name="UscWebservices.Weixin.ClassDiagrams">
+    <elementDefinition Id="dd729621-a4bf-41df-857c-a6e4f0597be3" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a3da62f6-135d-41f8-a25a-1961b0c028ee">
+        <profileInstance Id="badcbb25-f5c8-44a7-8b0b-ba704a64d552" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="899a64ab-bb24-4fbd-9538-f1326a52d674">
+        <profileInstance Id="1a195bfc-9c70-4271-8bda-ed5e5e324abc" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
