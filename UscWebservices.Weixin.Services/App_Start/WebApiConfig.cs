@@ -10,12 +10,12 @@ namespace UscWebservices.Weixin.Services
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-//教务系统密码找回映射配置
-config.Routes.MapHttpRoute(
-    name: "JiaoWuPwdApiRoute",
-    routeTemplate: "api/JiaoWu/Pwd/{username}",
-    defaults: new { controller = "JiaoWuPwd" }
-);
+            //教务系统密码找回映射配置
+            config.Routes.MapHttpRoute(
+                name: "JiaoWuPwdApiRoute",
+                routeTemplate: "api/JiaoWu/Pwd/{username}",
+                defaults: new { controller = "JiaoWuPwd" }
+            );
 
             //精品课程密码找回映射配置
             config.Routes.MapHttpRoute(
