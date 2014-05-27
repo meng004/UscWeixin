@@ -7,6 +7,7 @@ using Senparc.Weixin.MP.Context;
 using Senparc.Weixin.MP.Entities;
 using Senparc.Weixin.MP.MessageHandlers;
 using UscWebservices.Weixin.CommonServices;
+using RestSharp;
 
 namespace UscWebservices.Weixin.CommonServices
 {
@@ -15,6 +16,21 @@ namespace UscWebservices.Weixin.CommonServices
 
         #region 字段
 
+        /// <summary>
+        /// 主机地址
+        /// </summary>
+        const string _baseAddress = "http://localhost:1206/";
+        /// <summary>
+        /// 精品课程，请求Uri
+        /// </summary>
+        const string _requestJingPinKeChengUri = "api/JingPinKeCheng/pwd";
+        /// <summary>
+        /// 教务，请求Uri
+        /// </summary>
+        const string _requestJiaoWuUri = "api/JiaoWu/pwd";
+        /// <summary>
+        /// 返回消息
+        /// </summary>
         const string returnMessage = @"欢迎使用南华大学web自助服务
 目前提供
 【教务系统】与【数字化教学中心】
@@ -24,7 +40,9 @@ namespace UscWebservices.Weixin.CommonServices
 或
 数字化教学中心，登录名
 找回密码";
-
+        /// <summary>
+        /// 关注消息
+        /// </summary>
         const string subscribeMessage = @"欢迎关注南华大学web自助服务
 目前提供
 【教务系统】与【数字化教学中心】
@@ -288,17 +306,44 @@ Url:{2}", requestMessage.Title, requestMessage.Description, requestMessage.Url);
         #endregion
 
         #region 私有方法
-
+        /// <summary>
+        /// 获取精品课程密码
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         private string JingPinKeChengGetPassword(string username)
         {
-            var dal = new JingPinKeCheng.DataAccess();
-            return dal.GetPasswordByUsername(username);
+            return GetStringFromRestWebService(_requestJingPinKeChengUri, username);
         }
-
+        /// <summary>
+        /// 获取教务密码
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         private string JiaoWuGetPassword(string username)
         {
-            var dal = new JiaoWu.DataAccess();
-            return dal.GetPasswordByUsername(username);
+            return GetStringFromRestWebService(_requestJiaoWuUri, username);
+        }
+        /// <summary>
+        /// 访问restful web service，根据用户名，取密码
+        /// </summary>
+        /// <param name="requestUri">类似api/JingPinKeCheng/pwd</param>
+        /// <param name="username">用户名</param>
+        /// <returns></returns>
+        private string GetStringFromRestWebService(string requestUri, string username)
+        {
+            //访问服务的URL，形如http://127.0.0.1/api/JingPinKeCheng/Pwd/2005123456
+            var serviceUrl = string.Format("{0}/{1}/{2}", _baseAddress, requestUri, username);
+            //创建RestClient，指定主机地址
+            var client = new RestClient(serviceUrl);
+            //创建请求，指定请求地址、Http Method、数据传输格式
+            var request = new RestRequest(Method.GET);
+            //指定请求标头，声明使用Json格式传输数据
+            request.AddHeader("Accept", "application/json");
+            //执行请求
+            var response = client.Execute(request);
+            //返回结果
+            return response.Content;
         }
         #endregion
 

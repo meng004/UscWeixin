@@ -34,11 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gma.QrCodeNet.Encoding">
-      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="MessagingToolkit.Barcode">
-      <HintPath>..\packages\MessagingToolkit.Barcode.1.7.0.2\lib\net40\WPF\x86\MessagingToolkit.Barcode.dll</HintPath>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="Senparc.Weixin.MP">
       <HintPath>..\packages\Senparc.Weixin.MP.BuildOutPut\Senparc.Weixin.MP.dll</HintPath>
@@ -60,16 +57,7 @@
     <Compile Include="StringExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UscWebservices.Weixin.JiaoWu\UscWebservices.Weixin.JiaoWu.csproj">
-      <Project>{828ee7e3-f5f4-4d79-ae58-7c5c7755c977}</Project>
-      <Name>UscWebservices.Weixin.JiaoWu</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UscWebservices.Weixin.JingPinKeCheng\UscWebservices.Weixin.JingPinKeCheng.csproj">
-      <Project>{c8d3d58d-cbaa-41bb-bad5-3548a27d9dd1}</Project>
-      <Name>UscWebservices.Weixin.JingPinKeCheng</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
