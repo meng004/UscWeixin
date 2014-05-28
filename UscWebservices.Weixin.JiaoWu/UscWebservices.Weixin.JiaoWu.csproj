@@ -57,47 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
-    <Compile Include="JingPinKeCheng.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JingPinKeCheng.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="JingPinKeCheng.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JingPinKeCheng.tt</DependentUpon>
-    </Compile>
-    <Compile Include="JiaoWu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JiaoWu.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="JiaoWuDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="V_SYS_UsersInfo.cs">
-      <DependentUpon>JingPinKeCheng.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="JiaoWu.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>JiaoWu.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="JingPinKeCheng.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JiaoWu.edmx</DependentUpon>
-      <LastGenOutput>JingPinKeCheng.Context.cs</LastGenOutput>
-    </None>
-    <None Include="JiaoWu.edmx.diagram">
-      <DependentUpon>JiaoWu.edmx</DependentUpon>
-    </None>
-    <None Include="JingPinKeCheng.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JiaoWu.edmx</DependentUpon>
-      <LastGenOutput>JingPinKeCheng.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -12,10 +12,10 @@ namespace UscWebservices.Weixin.JiaoWu
         /// <returns></returns>
         public string GetPasswordByUsername(string username)
         {
-            using (var context = new JiaoWuEntities())
+            using (var context = new JiaoWuDbContext())
             {
                 //只处理学生帐号
-                var user = context.V_SYS_UsersInfo.First(t =>
+                var user = context.Users.First(t =>
                     t.UserName == username && t.YHLXM == "00"
                     );
 
