@@ -19,21 +19,21 @@ namespace UscWebservices.Weixin.CommonServices
 目前提供
 【教务系统】与【数字化教学中心】
 学生帐号的密码找回服务
-请发送消息：
-教务，登录名
+消息格式为：系统名,登录名
+如：教务,20129060107
 或
-数字化教学中心，登录名
-找回密码";
+数字化教学中心,20129060107
+";
 
         const string subscribeMessage = @"欢迎关注南华大学web自助服务
 目前提供
 【教务系统】与【数字化教学中心】
 学生帐号的密码找回服务
-请发送消息：
-教务，登录名
+消息格式为：系统名,登录名
+如：教务,20129060107
 或
-数字化教学中心，登录名
-找回密码";
+数字化教学中心,20129060107
+";
         #endregion
 
         #region 构造函数
@@ -110,24 +110,14 @@ namespace UscWebservices.Weixin.CommonServices
                 //检查消息是否正确
                 if (msg.Length != 2)
                 {
-                    //result.AppendFormat("您发送了格式不正确的信息：{0}\r\n\r\n", requestMessage.Content);
-                    //result.AppendLine(Environment.NewLine);
-                    //result.AppendFormat("正确格式为：系统编码+','+登录名，如：教务,20129060107");
-                    result.AppendFormat(returnMessage);
+                    result.AppendFormat("您发送的信息格式不正确");
+                    result.AppendLine(Environment.NewLine);
+                    result.AppendFormat("正确格式为：系统编码,登录名，如：教务,20129060107");
                 }
                 else
                 {
-                    var pwd = string.Empty;
-                    switch (msg[0])
-                    {
-                        case "教务":
-                            pwd = JiaoWuGetPassword(msg[1]);
-                            break;
-                        default:
-                        case "数字化教学中心":
-                            pwd = JingPinKeChengGetPassword(msg[1]);
-                            break;
-                    }
+                    var pwd = GetPassword(msg[1], msg[0]);
+
                     //创建返回消息
                     CreateMessage(msg, pwd, ref result);
                 }
@@ -135,26 +125,6 @@ namespace UscWebservices.Weixin.CommonServices
             }
 
             return responseMessage;
-        }
-
-        /// <summary>
-        /// 创建返回消息
-        /// </summary>
-        /// <param name="msg"></param>
-        /// <param name="pwd"></param>
-        /// <param name="result"></param>
-        private void CreateMessage(string[] msg, string pwd, ref StringBuilder result)
-        {
-            if (string.IsNullOrWhiteSpace(pwd))
-            {
-                result.AppendFormat("只提供学生帐号密码找回{0}请检查帐号{1}欢迎下次使用", Environment.NewLine, Environment.NewLine);
-            }
-            else
-            {
-                result.AppendFormat("登录名【{0}】{1}", msg[1], Environment.NewLine);
-                result.AppendFormat("在【{0}】的登录密码为：{1}{2}{3}", msg[0], Environment.NewLine, pwd, Environment.NewLine);
-                result.AppendLine("请妥善保管!");
-            }
         }
 
         /// <summary>
@@ -289,16 +259,54 @@ Url:{2}", requestMessage.Title, requestMessage.Description, requestMessage.Url);
 
         #region 私有方法
 
-        private string JingPinKeChengGetPassword(string username)
+        /// <summary>
+        /// 获取密码
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="sysIdentity"></param>
+        /// <returns></returns>
+        private string GetPassword(string username, string sysIdentity)
         {
-            var dal = new JingPinKeCheng.DataAccess();
-            return dal.GetPasswordByUsername(username);
+            string pwd = string.Empty;
+            // 数据访问接口
+            UscWebservices.Weixin.IServices.IFindPwd dal;
+            // 检查空输入
+            if (string.IsNullOrWhiteSpace(sysIdentity))
+                return pwd;
+            // 根据系统识别符，实例化数据访问对象
+            switch (sysIdentity)
+            {
+                case "教务":
+                    dal = new JiaoWu.DataAccess();
+                    break;
+                default:
+                case "数字化教学中心":
+                    dal = new JingPinKeCheng.DataAccess();
+                    break;
+            }
+            // 读取密码
+            pwd = dal.GetPasswordByUsername(username);
+            return pwd;
         }
 
-        private string JiaoWuGetPassword(string username)
+        /// <summary>
+        /// 创建返回消息
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="pwd"></param>
+        /// <param name="result"></param>
+        private void CreateMessage(string[] msg, string pwd, ref StringBuilder result)
         {
-            var dal = new JiaoWu.DataAccess();
-            return dal.GetPasswordByUsername(username);
+            if (string.IsNullOrWhiteSpace(pwd))
+            {
+                result.AppendFormat("只提供学生帐号密码找回{0}请检查帐号{1}欢迎下次使用", Environment.NewLine, Environment.NewLine);
+            }
+            else
+            {
+                result.AppendFormat("登录名【{0}】{1}", msg[1], Environment.NewLine);
+                result.AppendFormat("在【{0}】的登录密码为：{1}{2}{3}", msg[0], Environment.NewLine, pwd, Environment.NewLine);
+                result.AppendLine("请妥善保管!");
+            }
         }
         #endregion
 

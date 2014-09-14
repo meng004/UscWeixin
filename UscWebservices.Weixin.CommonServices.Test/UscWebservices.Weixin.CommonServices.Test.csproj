@@ -45,12 +45,6 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Gma.QrCodeNet.Encoding">
-      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="MessagingToolkit.Barcode">
-      <HintPath>..\packages\MessagingToolkit.Barcode.1.7.0.2\lib\net40\WPF\x86\MessagingToolkit.Barcode.dll</HintPath>
-    </Reference>
     <Reference Include="Senparc.Weixin.MP">
       <HintPath>..\packages\Senparc.Weixin.MP.dll</HintPath>
     </Reference>

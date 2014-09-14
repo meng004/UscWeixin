@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace UscWebservices.Weixin.JingPinKeCheng
 {
-    public class DataAccess 
+    public class DataAccess : UscWebservices.Weixin.IServices.IFindPwd
     {
         /// <summary>
         /// 由登录用户名，取密码
