@@ -1,9 +1,10 @@
 ﻿using System.Linq;
+using UscWebservices.Weixin.IServices;
 
 
 namespace UscWebservices.Weixin.JiaoWu
 {
-    public class DataAccess 
+    public class DataAccess : IFindPwd
     {
         /// <summary>
         /// 由登录用户名，取密码
@@ -24,7 +25,7 @@ namespace UscWebservices.Weixin.JiaoWu
                 {
                     return string.Empty;
                 }
-                else 
+                else
                 {
                     return user.Password;
                 }

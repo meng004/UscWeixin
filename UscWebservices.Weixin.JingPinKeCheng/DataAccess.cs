@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using UscWebservices.Weixin.IServices;
 
 namespace UscWebservices.Weixin.JingPinKeCheng
 {
-    public class DataAccess 
+    public class DataAccess : IFindPwd
     {
         /// <summary>
         /// 由登录用户名，取密码

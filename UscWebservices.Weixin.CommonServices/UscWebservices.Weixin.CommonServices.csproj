@@ -60,6 +60,10 @@
     <Compile Include="StringExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UscWebservices.Weixin.IServices\UscWebservices.Weixin.IServices.csproj">
+      <Project>{dcfeafc0-53bc-48e7-aa46-7d472f4ffbb6}</Project>
+      <Name>UscWebservices.Weixin.IServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UscWebservices.Weixin.JiaoWu\UscWebservices.Weixin.JiaoWu.csproj">
       <Project>{828ee7e3-f5f4-4d79-ae58-7c5c7755c977}</Project>
       <Name>UscWebservices.Weixin.JiaoWu</Name>
@@ -70,6 +74,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,33 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JiaoWuModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="JiaoWuModelStoreContainer">
-          <EntitySet Name="V_SYS_UsersInfo" EntityType="JiaoWuModel.Store.V_SYS_UsersInfo" store:Type="Views" store:Schema="dbo" store:Name="V_SYS_UsersInfo">
-            <DefiningQuery>SELECT 
-      [V_SYS_UsersInfo].[XTYHID] AS [XTYHID], 
-      [V_SYS_UsersInfo].[YHID] AS [YHID], 
-      [V_SYS_UsersInfo].[USERID] AS [USERID], 
-      [V_SYS_UsersInfo].[YHJB] AS [YHJB], 
-      [V_SYS_UsersInfo].[YHLX] AS [YHLX], 
-      [V_SYS_UsersInfo].[SJBSMC] AS [SJBSMC], 
-      [V_SYS_UsersInfo].[YXSID] AS [YXSID], 
-      [V_SYS_UsersInfo].[YXSMC] AS [YXSMC], 
-      [V_SYS_UsersInfo].[XM] AS [XM], 
-      [V_SYS_UsersInfo].[XB] AS [XB], 
-      [V_SYS_UsersInfo].[SJBS] AS [SJBS], 
-      [V_SYS_UsersInfo].[YHJBM] AS [YHJBM], 
-      [V_SYS_UsersInfo].[YHLXM] AS [YHLXM], 
-      [V_SYS_UsersInfo].[UserName] AS [UserName], 
-      [V_SYS_UsersInfo].[Password] AS [Password], 
-      [V_SYS_UsersInfo].[IsLockedOut] AS [IsLockedOut], 
-      [V_SYS_UsersInfo].[SFZH] AS [SFZH]
-      FROM [dbo].[V_SYS_UsersInfo] AS [V_SYS_UsersInfo]</DefiningQuery>
-          </EntitySet>
-        </EntityContainer>
+    <Schema Namespace="JiaoWuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <!--生成过程中发现错误:
-      警告 6002: 表/视图“NHU_JWDB.dbo.V_SYS_UsersInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
-      -->
+警告 6002: 表/视图“NHU_JWDB.dbo.V_SYS_UsersInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="V_SYS_UsersInfo">
           <Key>
             <PropertyRef Name="XTYHID" />
@@ -45,19 +21,39 @@
           <Property Name="YHLX" Type="varchar" MaxLength="20" />
           <Property Name="SJBSMC" Type="varchar" MaxLength="20" />
           <Property Name="YXSID" Type="uniqueidentifier" />
-          <Property Name="YXSMC" Type="nvarchar" MaxLength="200" />
-          <Property Name="XM" Type="nvarchar" MaxLength="200" />
+          <Property Name="YXSMC" Type="varchar" MaxLength="60" />
+          <Property Name="XM" Type="varchar" MaxLength="40" />
           <Property Name="XB" Type="varchar" MaxLength="4" />
           <Property Name="SJBS" Type="char" MaxLength="1" />
           <Property Name="YHJBM" Type="char" MaxLength="2" />
           <Property Name="YHLXM" Type="char" MaxLength="2" />
-          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
-          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="IsLockedOut" Type="bit" Nullable="false" />
-          <Property Name="SFZH" Type="varchar" MaxLength="30" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityContainer Name="JiaoWuModelStoreContainer">
+          <EntitySet Name="V_SYS_UsersInfo" EntityType="Self.V_SYS_UsersInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[V_SYS_UsersInfo].[XTYHID] AS [XTYHID], 
+[V_SYS_UsersInfo].[YHID] AS [YHID], 
+[V_SYS_UsersInfo].[USERID] AS [USERID], 
+[V_SYS_UsersInfo].[YHJB] AS [YHJB], 
+[V_SYS_UsersInfo].[YHLX] AS [YHLX], 
+[V_SYS_UsersInfo].[SJBSMC] AS [SJBSMC], 
+[V_SYS_UsersInfo].[YXSID] AS [YXSID], 
+[V_SYS_UsersInfo].[YXSMC] AS [YXSMC], 
+[V_SYS_UsersInfo].[XM] AS [XM], 
+[V_SYS_UsersInfo].[XB] AS [XB], 
+[V_SYS_UsersInfo].[SJBS] AS [SJBS], 
+[V_SYS_UsersInfo].[YHJBM] AS [YHJBM], 
+[V_SYS_UsersInfo].[YHLXM] AS [YHLXM], 
+[V_SYS_UsersInfo].[UserName] AS [UserName], 
+[V_SYS_UsersInfo].[Password] AS [Password], 
+[V_SYS_UsersInfo].[IsLockedOut] AS [IsLockedOut]
+FROM [dbo].[V_SYS_UsersInfo] AS [V_SYS_UsersInfo]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JiaoWuModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -78,8 +74,8 @@
           <Property Name="YHLX" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="SJBSMC" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="YXSID" Type="Guid" />
-          <Property Name="YXSMC" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="XM" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="YXSMC" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="XM" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
           <Property Name="XB" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
           <Property Name="SJBS" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
           <Property Name="YHJBM" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
@@ -87,7 +83,6 @@
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
           <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
-          <Property Name="SFZH" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -114,7 +109,6 @@
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
-                <ScalarProperty Name="SFZH" ColumnName="SFZH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -135,6 +129,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
