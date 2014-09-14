@@ -97,6 +97,10 @@
       <Project>{828ee7e3-f5f4-4d79-ae58-7c5c7755c977}</Project>
       <Name>UscWebservices.Weixin.JiaoWu</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UscWebservices.Weixin.JingPinKeCheng\UscWebservices.Weixin.JingPinKeCheng.csproj">
+      <Project>{c8d3d58d-cbaa-41bb-bad5-3548a27d9dd1}</Project>
+      <Name>UscWebservices.Weixin.JingPinKeCheng</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -116,7 +120,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2432/</IISUrl>
+          <IISUrl>http://localhost:15651/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
