@@ -17,7 +17,7 @@ namespace UscWebservices.Weixin.JingPinKeCheng
             using (var context = new JingPinKeChengEntities())
             {
                 //只接受学生帐号
-                var user = context.user.First(t =>
+                var user = context.Users.First(t =>
                     t.logname == username && t.user_type == 2
                     );
                 //处理帐号错误

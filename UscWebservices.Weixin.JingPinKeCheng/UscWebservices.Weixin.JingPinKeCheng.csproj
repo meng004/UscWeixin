@@ -61,48 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
-    <Compile Include="JingPinKeCheng.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JingPinKeCheng.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="JingPinKeCheng.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JingPinKeCheng.tt</DependentUpon>
-    </Compile>
-    <Compile Include="JingPinKeCheng.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JingPinKeCheng.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="JingPinKeChengEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="user.cs">
-      <DependentUpon>JingPinKeCheng.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="JingPinKeCheng.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>JingPinKeCheng.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="JingPinKeCheng.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JingPinKeCheng.edmx</DependentUpon>
-      <LastGenOutput>JingPinKeCheng.Context.cs</LastGenOutput>
-    </None>
-    <None Include="JingPinKeCheng.edmx.diagram">
-      <DependentUpon>JingPinKeCheng.edmx</DependentUpon>
-    </None>
-    <None Include="JingPinKeCheng.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JingPinKeCheng.edmx</DependentUpon>
-      <LastGenOutput>JingPinKeCheng.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
