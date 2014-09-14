@@ -16,7 +16,7 @@ namespace UscWebservices.Weixin.JiaoWu
             using (var context = new JiaoWuEntities())
             {
                 //只处理学生帐号
-                var user = context.V_SYS_UsersInfo.First(t =>
+                var user = context.Users.First(t =>
                     t.UserName == username && t.YHLXM == "00"
                     );
 

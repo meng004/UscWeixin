@@ -12,7 +12,7 @@ namespace UscWebservices.Weixin.JiaoWu
     using System;
     using System.Collections.Generic;
     
-    public partial class V_SYS_UsersInfo
+    public class V_SYS_UsersInfo
     {
         public System.Guid XTYHID { get; set; }
         public Nullable<System.Guid> YHID { get; set; }
@@ -30,6 +30,5 @@ namespace UscWebservices.Weixin.JiaoWu
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IsLockedOut { get; set; }
-        public string SFZH { get; set; }
     }
 }
