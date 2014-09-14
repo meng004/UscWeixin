@@ -8,7 +8,7 @@ namespace UscWebservices.Weixin.JiaoWu
     public class JiaoWuEntities : DbContext
     {
         public JiaoWuEntities()
-            : base("name=JiaoWu")
+            : base("name=JiaoWuEntities")
         {
         }
 
